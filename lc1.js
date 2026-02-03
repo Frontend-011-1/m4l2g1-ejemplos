@@ -84,3 +84,80 @@ console.log(mensajeConcat);
 // Método 3: template literals (comillas invertidas ``)
 let mensajeModerno = `${hola}, tu nombre es ${persona}`;
 console.log(mensajeModerno);
+
+/* 
+  OPERACIONES MATEMÁTICAS
+*/
+console.log('--- 3. OPERACIONES Y PRECEDENCIA ---');
+
+let costoCurso = 1000;
+let descuento = 200;
+let impuesto = 50;
+
+// Operación básica
+let totalSimple = costoCurso - descuento + impuesto;
+console.log(`Total simple: ${totalSimple}`);
+
+/* 
+  Precedencia de operadores:
+  multiplicacion y division se ejecutan antes que suma y resta
+*/
+
+let operacionConfusa = 10 + 5 * 2;
+console.log(`El resultado de la operación confusa es: ${operacionConfusa}`);
+
+// Usar paréntesis para cambiar el orden y forzar que la suma ocurra antes
+let operacionControlada = (10 + 5) * 2;
+console.log(
+  `El resultado de la operación controlada es: ${operacionControlada}`,
+);
+
+// Conversión de tipos
+console.log('--- 4. CONVERSIÓN DE TIPOS ---');
+
+// Coerción Implícita (automática)
+// JavaScript intenta "adivinar" qué quieres hacer
+
+let numeroString = '10';
+let numeroReal = 5;
+
+// Al sumar un string + numero, JS convierte el numero a string y CONCATENA
+let resultadoSuma = numeroString + numeroReal;
+console.log(`"10" + 5 es: ${resultadoSuma}`);
+console.log(`Tipo de dato: ${typeof resultadoSuma}`);
+
+// Al multiplicar, JS convierte el string a número (si es que se puede) y luego multiplica
+let resultadoMultiplicacion = numeroString * numeroReal;
+console.log(`"10" * 5 es: ${resultadoMultiplicacion}`);
+console.log(`Tipo de dato: ${typeof resultadoMultiplicacion}`);
+
+// Coerción Explícita (Manual/Intencionada)
+// nosotros forzamos el cambio de tipo para evitar errores
+let valorIngresado = '100'; // simulando entrada un input HTML
+let valorConvertido = Number(valorIngresado); // convertimos a numero
+let totalExplicita = valorConvertido + 50;
+
+console.log(`Suma con conversión explícita (100 + 50): ${totalExplicita}`);
+
+// Convertir a String
+let codigo = 999;
+let codigoString = String(codigo);
+console.log(`Número convertido a String: ${codigoString}`);
+console.log(`Tipo de dato de codigoString: ${typeof codigoString}`);
+
+/* 
+  5. OPERADORES DE INCREMENTO Y DECREMENTO
+*/
+console.log('--- 5. OPERADORES DE INCREMENTO Y DECREMENTO ---');
+
+let puntos = 10;
+
+// x++ postfix: usa el valor y LUEGO incrementa
+console.log(`Valor original de puntos: ${puntos}`);
+console.log(`Usando puntos++ (imprime y luego suma): ${puntos++}`);
+console.log(`Valor actual de puntos: ${puntos}`);
+
+// ++x prefix: Incrementa PRIMERO y luego usa el valor
+let vidas = 5;
+console.log(`Valor original de vidas: ${vidas}`);
+console.log(`Usando ++vidas (suma y luego imprime): ${++vidas}`);
